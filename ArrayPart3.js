@@ -35,15 +35,23 @@ function dataHandling2(input) {
     case '12' : console.log('December')
     break
   }
-   //cetak data tanggal dalam string
-  console.log(tanggal.sort( function (value1,value2) { return value1 < value2} ))
-  console.log(tanggal.join('-'))
-  //cetak data tanggal dalam number
-  var dateArr = [Number(tanggal[0]),Number(tanggal[1]),Number(tanggal[2])]
-  console.log(dateArr.sort(function (value1,value2) { return value1 < value2}))
-  console.log(dateArr.join('-'))
-  //batasi jumlah karakter
-  console.log(input[1].slice(0,15))
+   
+   tanggal.sort(function(a,b){return b-a})
+   console.log(tanggal)
+
+   console.log(input[3].split('/').join('-'))
+
+   console.log(input[1].slice(0,15))
 }
 
 dataHandling2(input)
+
+/**
+ * keluaran yang diharapkan (pada console)
+ *
+ * ["0001", "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro"]
+ * Mei
+ * ["1989", "21", "05"]
+ * 21-05-1989
+ * Roman Alamsyah
+ */

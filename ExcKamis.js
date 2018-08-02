@@ -66,6 +66,18 @@ function tentukanDeretAritmatika(arr) {
   }
   return tampung
 }
+
+//improve
+function tentukanDeretAritmatika(arr) {
+  var awal = arr[1]-arr[0]
+
+  for(var i = 2; i<arr.length-1; i++) {
+    if(arr[i]-arr[i-1] != awal) {
+      return false
+    }
+  }
+  return true
+}
   
   // TEST CASES
   console.log(tentukanDeretAritmatika([1, 2, 3, 4, 5, 6])); // true
@@ -90,6 +102,18 @@ function tentukanDeretGeometri(arr) {
     }
   }
   return tampung
+}
+
+//improve
+
+function tentukanDeretGeometri(arr) {
+  var perkalianAwal = arr[1]/arr[0]
+  for( var i = 2; i<arr.length; i++){
+    if(arr[i]/arr[i-1] != perkalianAwal){
+      return false
+    }
+  }
+  return true 
 }
 
 // TEST CASES

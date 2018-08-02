@@ -1,5 +1,8 @@
 // ⚓️ [Exercises 15] Mengelompokkan Hewan---------------------------------------------
 
+
+//coba pake var alpabet =a sd z untuk sorting
+
 function groupAnimals(animals) {
     animals.sort(function(a,b) { return b<a})
     var arrangedAnimals = [[]]
@@ -8,7 +11,7 @@ function groupAnimals(animals) {
     arrangedAnimals[index].push(animals[0])
     for (var i=1;i<animals.length;i++) {
       if(animals[i][0] == arrangedAnimals[index][0][0]) {
-        arrangedAnimals[index].push(animals[i])
+        arrangedAnimals[index].push(animals[i]) //
       }
       else{
         index += 1

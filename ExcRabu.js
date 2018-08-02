@@ -70,6 +70,21 @@ function pasanganTerbesar(num) {
   return result
 }
 
+//atau
+function pasanganTerbesar(num) {
+  var numStr = num.toString()
+  var tampung = 0
+  for(var i = 0; i<numStr.length-1; i++){
+    numStr[i]+numStr[i+1]
+    if(Number(numStr[i]+numStr[i+1]) > tampung) {
+      tampung = Number(numStr[i]+numStr[i+1])
+    }
+  }
+
+  return tampung
+}
+
+
 // TEST CASES
 console.log(pasanganTerbesar(641573)); // 73
 console.log(pasanganTerbesar(12783456)); // 83
