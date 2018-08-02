@@ -4,22 +4,30 @@
 //coba pake var alpabet =a sd z untuk sorting
 
 function groupAnimals(animals) {
-    animals.sort(function(a,b) { return b<a})
-    var arrangedAnimals = [[]]
-    var index = 0
-  
-    arrangedAnimals[index].push(animals[0])
-    for (var i=1;i<animals.length;i++) {
-      if(animals[i][0] == arrangedAnimals[index][0][0]) {
-        arrangedAnimals[index].push(animals[i]) //
-      }
-      else{
-        index += 1
-        arrangedAnimals[index] = [animals[i]]
+  var alpabet = 'abcdefghijklmnopqrstuvwxyz'
+  var result= []
+  for(var i=0;i<alpabet.length;i++){
+    for(var j=0; j<animals.length;j++){
+      if(animals[j][0] == alpabet[i]){
+        result.push(animals[j])
       }
     }
-    return arrangedAnimals
   }
   
-  console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']))
-  console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]))
+  var  arranged = [[]]
+  var index = 0
+  arranged[index].push(result[0])
+  for(var k=1;k<result.length;k++){
+    if(result[k][0] == arranged[index][0][0]){
+      arranged[index].push(result[k])
+    } else {
+      index++
+      arranged[index] = [result[k]]
+    }
+  }     
+    return arranged
+}
+    
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']))
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]))
+  
